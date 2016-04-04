@@ -5,6 +5,30 @@ app.controller("ExerciseController", function($scope) {
 
 $scope.showme = 0;
 
+$scope.newPost = {
+  score: 0,
+  voteUp: function () {
+    this.score++;
+    },
+  voteDown:function() {
+    this.score--;
+    }
+};
+
+
+$scope.update = function (newPost) {
+  $scope.posts.push(this.newPost);
+  $scope.newPost = {
+  score: 0,
+  voteUp: function () {
+    this.score++;
+    },
+  voteDown:function() {
+    this.score--;
+    }
+};
+}
+
 $scope.sorts = "-score";
 
 $scope.posts = [
