@@ -9,7 +9,10 @@
 </head>
 
 <body ng-controller="ExerciseController">
-    <div class="container">
+    <div class="container">\
+
+    <!-- NAV BAR
+ -->
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,7 +29,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Add Post+<span class="sr-only">(current)</span></a></li>
+              <li class="active"><a href="#" ng-click="showme=showme+1">Add Post+<span class="sr-only">(current)</span></a></li>
               <select ng-model="sorts" ng-init="score">
                 <option value=" - score">Votes</option>
                 <option value="date">Date</option>
@@ -42,6 +45,34 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
+      <!-- FORM -->
+      <form ng-show="showme%2">
+        <fieldset>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+          </div>
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-addon" id="basic-addon2">@example.com</span>
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-addon">.00</span>
+          </div>
+
+          <label for="basic-url">Your vanity URL</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+        </fieldset>
+
+      </form>
+
 
     <!--   POSTS -->
       <div class="media" ng-repeat="post in posts | orderBy: sorts">
@@ -62,7 +93,9 @@
           </h4>
           <h5 class="text-right">By {{post.author}}</h5>
           {{post.description}}
+
         </div>
+
       </div>
 
     </div>
@@ -71,6 +104,8 @@
   <!-- Your code here  -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.10/angular.min.js"></script>
+ <!--  <script src="components/moment/moment.js"></script>
+  <script src="components/angular-moment/angular-moment.js"></script> -->
   <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

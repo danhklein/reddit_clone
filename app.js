@@ -3,6 +3,7 @@
 var app = angular.module("firstApp", []);
 app.controller("ExerciseController", function($scope) {
 
+$scope.showme = 0;
 
 $scope.sorts = "-score";
 
