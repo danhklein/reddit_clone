@@ -5,6 +5,10 @@ app.controller("ExerciseController", function($scope) {
 
 $scope.showme = 0;
 
+
+
+
+
 $scope.newPost = {
   score: 0,
   voteUp: function () {
@@ -12,9 +16,22 @@ $scope.newPost = {
     },
   voteDown:function() {
     this.score--;
+    },
+  comments: [],
+    showform: false,
+      showForm: function () {
+    if (this.showform) {
+      this.showform = false;
     }
+    else {
+      this.showform = true;
+    }
+  }
 };
 
+$scope.addComment = function (newComment) {
+  this.comments.push(this.newComment)
+}
 
 $scope.update = function (newPost) {
   $scope.posts.push(this.newPost);
@@ -42,7 +59,17 @@ $scope.posts = [
     },
   voteDown:function() {
     this.score--;
-    }
+    },
+    comments: [],
+    showform: false,
+     falseshowForm: function () {
+  if (this.showform) {
+    this.showform = false;
+  }
+  else {
+    this.showform = true;
+  }
+}
 
   },
   {title: "Welcome to the land of the free",
@@ -55,7 +82,17 @@ $scope.posts = [
   },
   voteDown:function() {
     this.score--;
-    }
+    },
+    comments: [],
+    showform: false,
+     showForm: function () {
+  if (this.showform) {
+    this.showform = false;
+  }
+  else {
+    this.showform = true;
+  }
+}
   },
   {
   title: "Job Posting: Right-hand man",
@@ -68,8 +105,19 @@ $scope.posts = [
   },
   voteDown:function() {
     this.score--;
-    }
+    },
+    comments: [],
+    showform: false,
+     showForm: function () {
+  if (this.showform) {
+    this.showform = false;
   }
+  else {
+    this.showform = true;
+  }
+}
+  },
+
 ]
 
 });
